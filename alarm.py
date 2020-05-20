@@ -1,6 +1,15 @@
 import sys
 import os
-from PyQt5.QtWidgets import QApplication, QHBoxLayout, QFormLayout, QLineEdit, QPushButton, QWidget, QVBoxLayout, QLabel
+from PyQt5.QtWidgets import (
+    QApplication,
+    QFormLayout,
+    QHBoxLayout,
+    QLabel,
+    QLineEdit,
+    QPushButton,
+    QVBoxLayout,
+    QWidget,
+)
 from PyQt5.QtGui import QFont, QIntValidator
 from PyQt5.QtCore import QTimer, QTime, Qt
 
