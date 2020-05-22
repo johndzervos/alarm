@@ -39,6 +39,8 @@ class AppDemo(QWidget):
 
     visitButton = QPushButton("Visit")
     visitButton.clicked.connect(self.visitButtonClicked)
+    lockButton = QPushButton("Lock")
+    lockButton.clicked.connect(self.lockOut)
     shutDownButton = QPushButton("ShutDown")
     shutDownButton.clicked.connect(self.shutDown)
 
@@ -53,6 +55,7 @@ class AppDemo(QWidget):
 
     hbox3 = QHBoxLayout()
     hbox3.addWidget(visitButton)
+    hbox3.addWidget(lockButton)
     hbox3.addWidget(shutDownButton)
 
     vbox = QVBoxLayout()
@@ -73,8 +76,11 @@ class AppDemo(QWidget):
     print("shut down")
     os.system('systemctl poweroff -i')
 
+  def lockOut(self):
+    os.system('gnome-screensaver-command -l')
+
   def visitButtonClicked(self):
-    site_url = self.inputLink.text() if len(self.inputLink.text()) else 'https://www.youtube.com/watch?v=BMONbjfPCxk?autoplay=true'
+    site_url = self.inputLink.text() if len(self.inputLink.text()) else 'http://live24.gr/radio/generic.jsp?sid=274'
     os.system('google-chrome ' + site_url)
 
   def showTime(self):
