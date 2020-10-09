@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import os
 from PyQt5.QtWidgets import (
@@ -81,7 +83,7 @@ class AppDemo(QWidget):
 
   def visitButtonClicked(self):
     site_url = self.inputLink.text() if len(self.inputLink.text()) else 'http://live24.gr/radio/generic.jsp?sid=274'
-    os.system('google-chrome ' + site_url)
+    os.system(f'google-chrome {site_url} --disable-setuid-sandbox --no-sandbox')
 
   def showTime(self):
     currentTime = QTime.currentTime()
